@@ -13,7 +13,7 @@
     @endif
 
     <h1>Create post</h1>
-    <form action="{{-- {{route('posts.store')}} --}}" method="post">
+    <form action="{{route('admin.posts.store')}}" method="post">
         @csrf
 
         <div class="form-group">

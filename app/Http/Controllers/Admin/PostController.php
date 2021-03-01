@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Post;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -39,7 +40,25 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $slug = Str::slug($request->title);
+
+        $validateData = $request->validate([
+            'title' => 'required|unique:posts|max:255',
+            'body' => 'required',
+            /* 'category_id' => 'required|exists:categories,id',
+            'tags' => 'exists:tags,id' */
+        ]);
+        
+        $validateData['slug'] = $slug;
+
+        Post::create($validateData);
+
+        $new_post = Post::orderBy("id", "desc")->first();
+
+        /* $new_post->tags()->attach($request->tags); */
+
+        return redirect()->route("admin.posts.index", $new_post);
     }
 
     /**
