@@ -81,8 +81,8 @@
             <div class="row">
                 <div class="col-xs-12 col-md-3 col-lg-2">
                     <ul class="list-unstyled">
-                        <li><a href="#"><i class="fas fa-tachometer-alt    "></i> Dashboard</a></li>
-                        <li><a href="#"><i class="fas fa-book-open    "></i> Posts</a></li>
+                        <li><a href="{{ route('admin.index')}}"><i class="fas fa-tachometer-alt    "></i> Dashboard</a></li>
+                        <li><a href="{{ route('admin.posts.index')}}"><i class="fas fa-book-open    "></i> Posts</a></li>
                         <li><a href="#"><i class="fa fa-folder-open" aria-hidden="true"></i> Categories</a></li>
                         <li><a href="#"><i class="fas fa-tag fa-lg fa-fw"></i> Tags</a></li>
                     </ul>
