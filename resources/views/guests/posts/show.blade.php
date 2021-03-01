@@ -2,15 +2,13 @@
 
 @section('content')
 
-    <h1>Blog</h1>
+    <h1>{{$post->title}}</h1>
 
-    @foreach ($posts as $post)
         <div class="card">
             <div class="card-body">
-                <a href="{{route('guests.posts.show', ['post' => $post->slug])}}"><h4 class="card-title">{{$post->title}}</h4></a>
+                <h4 class="card-title">{{$post->title}}</h4>
                 <p class="card-text">{{$post->body}}</p>
             </div>
         </div>
-    @endforeach
 
 @endsection
