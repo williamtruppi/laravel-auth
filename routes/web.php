@@ -17,7 +17,7 @@ Route::get('/', 'PageController@index')->name('homepage');
 Route::get('about', 'PageController@about')->name('about');
 Route::get('contacts', 'PageController@contacts')->name('contacts');
 Route::get('blog', 'PostController@index')->name('blog');
-Route::get('blog/{post}', 'PostController@show');
+Route::get('blog/{post}', 'PostController@show')->name('blog.show');
 
 Auth::routes(['register' => false]);
 
