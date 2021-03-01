@@ -7,7 +7,7 @@
     @foreach ($posts as $post)
         <div class="card">
             <div class="card-body">
-                <a href="{{route('guests.posts.show', ['post' => $post->slug])}}"><h4 class="card-title">{{$post->title}}</h4></a>
+                <a href=""><h4 class="card-title">{{$post->title}}</h4></a>
                 <p class="card-text">{{$post->body}}</p>
             </div>
         </div>
