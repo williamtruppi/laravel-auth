@@ -2,7 +2,8 @@
 
 @section('content')
 
-    <h1>{{$post->title}}</h1>
+    <div class="container">
+        <h1>{{$post->title}}</h1>
 
         <div class="card">
             <div class="card-body">
@@ -10,5 +11,7 @@
                 <p class="card-text">{{$post->body}}</p>
             </div>
         </div>
+    </div>
+    
 
 @endsection
