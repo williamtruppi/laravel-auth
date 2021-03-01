@@ -92,7 +92,20 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $slug = Str::slug($request->title);
+
+        $validateData = $request->validate([
+            'title' => 'required|unique:posts,id|max:255',
+            'body' => 'required',
+            /* 'category_id' => 'required|exists:categories,id',
+            'tags' => 'exists:tags,id' */
+        ]);
+        
+        $validateData['slug'] = $slug;
+
+        $post->update($validateData);
+        /* $post->tags()->sync($request->tags); */
+        return redirect()->route("admin.posts.index");
     }
 
     /**

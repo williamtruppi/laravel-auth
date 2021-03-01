@@ -13,7 +13,7 @@
     @endif
     
     <h1>Edit post {{$post->title}}</h1>
-    <form action="{{ route('admin.posts.update', ['post'=> $post->id]) }}" method="post">
+    <form action="{{ route('admin.posts.update', ['post'=> $post->slug]) }}" method="post">
         @csrf
 
         @method("PUT") <!-- passiamo PUT poichè il metodo più indicato per EDIT -->
