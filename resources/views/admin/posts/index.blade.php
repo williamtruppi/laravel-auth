@@ -23,7 +23,7 @@
                     <a href="{{route('admin.posts.edit', ['post' => $post->slug])}}" class="btn btn-warning"><i class="fas fa-pencil-ruler fa-xs fa-fw"></i></a>
                     <!-- Modal -->
                     <!-- Button trigger modal -->
-                    <a class="text-danger ml-2" data-toggle="modal" data-target="#delete-{{ $post->slug }}"
+                    <a class="btn btn-danger" data-toggle="modal" data-target="#delete-{{ $post->slug }}"
                         role="button">
                         <i class="fas fa-trash-alt"></i>
                     </a>
